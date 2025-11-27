@@ -24,7 +24,7 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://hthegrumpy.app.n8n.cloud/webhook-test/http://localhost:3000/contact', {
+      const response = await fetch('https://hthegrumpy.app.n8n.cloud/webhook/2147b71b-bc5d-41ca-85ff-5ed4c21797c7', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
