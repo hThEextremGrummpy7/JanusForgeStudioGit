@@ -1,0 +1,154 @@
+<svg width="1920" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Silver cold metallic gradient -->
+    <linearGradient id="silverCold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d0d8e0;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#e8eef5;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#c0c8d0;stop-opacity:0.85" />
+    </linearGradient>
+    
+    <!-- Cold silver with blue-gray tones -->
+    <linearGradient id="silverColdBright" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8eef5;stop-opacity:0.95" />
+      <stop offset="50%" style="stop-color:#f0f4f8;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#d8e0e8;stop-opacity:0.85" />
+    </linearGradient>
+    
+    <!-- Darker cold silver for depth -->
+    <linearGradient id="silverColdDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8b0c0;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#9098a8;stop-opacity:0.5" />
+    </linearGradient>
+    
+    <!-- Hexagon pattern for cold silver beehive -->
+    <pattern id="hexPatternCold" x="0" y="0" width="120" height="104" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 110 26 L 110 78 L 60 104 L 10 78 L 10 26 Z" 
+            fill="none" 
+            stroke="url(#silverCold)" 
+            stroke-width="2" 
+            opacity="0.7"/>
+      <path d="M 60 20 L 95 38 L 95 66 L 60 84 L 25 66 L 25 38 Z" 
+            fill="none" 
+            stroke="url(#silverColdDark)" 
+            stroke-width="1.5" 
+            opacity="0.5"/>
+    </pattern>
+    
+    <!-- Background gradient - dark base -->
+    <linearGradient id="bgGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000" />
+      <stop offset="50%" style="stop-color:#0a0a0a" />
+      <stop offset="100%" style="stop-color:#000000" />
+    </linearGradient>
+    
+    <!-- Cold silver shine effect -->
+    <radialGradient id="coldShine" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#e8eef5;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#e8eef5;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="100%" height="100%" fill="url(#bgGradientDark)"/>
+  
+  <!-- Cold silver shine overlay -->
+  <rect width="100%" height="100%" fill="url(#coldShine)"/>
+  
+  <!-- Bee hive hexagon pattern with cold silver -->
+  <rect width="100%" height="100%" fill="url(#hexPatternCold)"/>
+  
+  <!-- Prominent cold silver hexagons -->
+  <g opacity="0.8">
+    <path d="M 200 150 L 260 180 L 260 240 L 200 270 L 140 240 L 140 180 Z" 
+          fill="none" 
+          stroke="url(#silverColdBright)" 
+          stroke-width="2.5" 
+          opacity="0.7"/>
+    <path d="M 200 150 L 230 165 L 230 195 L 200 210 L 170 195 L 170 165 Z" 
+          fill="none" 
+          stroke="url(#silverCold)" 
+          stroke-width="2" 
+          opacity="0.5"/>
+  </g>
+  
+  <g opacity="0.75">
+    <path d="M 600 200 L 660 230 L 660 290 L 600 320 L 540 290 L 540 230 Z" 
+          fill="none" 
+          stroke="url(#silverColdBright)" 
+          stroke-width="2.5" 
+          opacity="0.7"/>
+    <path d="M 600 200 L 630 215 L 630 245 L 600 260 L 570 245 L 570 215 Z" 
+          fill="none" 
+          stroke="url(#silverCold)" 
+          stroke-width="2" 
+          opacity="0.5"/>
+  </g>
+  
+  <g opacity="0.8">
+    <path d="M 1000 250 L 1060 280 L 1060 340 L 1000 370 L 940 340 L 940 280 Z" 
+          fill="none" 
+          stroke="url(#silverColdBright)" 
+          stroke-width="2.5" 
+          opacity="0.7"/>
+    <path d="M 1000 250 L 1030 265 L 1030 295 L 1000 310 L 970 295 L 970 265 Z" 
+          fill="none" 
+          stroke="url(#silverCold)" 
+          stroke-width="2" 
+          opacity="0.5"/>
+  </g>
+  
+  <g opacity="0.75">
+    <path d="M 1400 300 L 1460 330 L 1460 390 L 1400 420 L 1340 390 L 1340 330 Z" 
+          fill="none" 
+          stroke="url(#silverColdBright)" 
+          stroke-width="2.5" 
+          opacity="0.7"/>
+    <path d="M 1400 300 L 1430 315 L 1430 345 L 1400 360 L 1370 345 L 1370 315 Z" 
+          fill="none" 
+          stroke="url(#silverCold)" 
+          stroke-width="2" 
+          opacity="0.5"/>
+  </g>
+  
+  <g opacity="0.8">
+    <path d="M 1700 350 L 1760 380 L 1760 440 L 1700 470 L 1640 440 L 1640 380 Z" 
+          fill="none" 
+          stroke="url(#silverColdBright)" 
+          stroke-width="2.5" 
+          opacity="0.7"/>
+    <path d="M 1700 350 L 1730 365 L 1730 395 L 1700 410 L 1670 395 L 1670 365 Z" 
+          fill="none" 
+          stroke="url(#silverCold)" 
+          stroke-width="2" 
+          opacity="0.5"/>
+  </g>
+  
+  <!-- Additional smaller cold silver hexagons for texture -->
+  <g opacity="0.6">
+    <path d="M 400 100 L 430 115 L 430 145 L 400 160 L 370 145 L 370 115 Z" 
+          fill="none" 
+          stroke="url(#silverCold)" 
+          stroke-width="1.5" 
+          opacity="0.4"/>
+    <path d="M 800 150 L 830 165 L 830 195 L 800 210 L 770 195 L 770 165 Z" 
+          fill="none" 
+          stroke="url(#silverCold)" 
+          stroke-width="1.5" 
+          opacity="0.4"/>
+    <path d="M 1200 200 L 1230 215 L 1230 245 L 1200 260 L 1170 245 L 1170 215 Z" 
+          fill="none" 
+          stroke="url(#silverCold)" 
+          stroke-width="1.5" 
+          opacity="0.4"/>
+    <path d="M 1600 250 L 1630 265 L 1630 295 L 1600 310 L 1570 295 L 1570 265 Z" 
+          fill="none" 
+          stroke="url(#silverCold)" 
+          stroke-width="1.5" 
+          opacity="0.4"/>
+  </g>
+  
+  <!-- Cold metallic shine lines -->
+  <line x1="0" y1="200" x2="1920" y2="200" stroke="url(#silverCold)" stroke-width="1" opacity="0.2"/>
+  <line x1="0" y1="400" x2="1920" y2="400" stroke="url(#silverCold)" stroke-width="1" opacity="0.2"/>
+  <line x1="0" y1="600" x2="1920" y2="600" stroke="url(#silverCold)" stroke-width="1" opacity="0.2"/>
+</svg>
