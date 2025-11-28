@@ -1,43 +1,52 @@
 // app/api/contact/route.ts
+import { NextResponse } from "next/server";
 
-export async function POST(request: Request) {
+export async function POST(req: Request) {
+  
+  console.log("ENV:", process.env.N8N_WEBHOOK_URL);
+
   try {
-    // 1. 拿前端傳來的 JSON
-    const data = await request.json();
+    const body = await req.json();
 
-    // 2. 轉送到 n8n Webhook
-    const res = await fetch(
-      "https://hthegrumpy.app.n8n.cloud/webhook/312e7413-819d-4352-80a4-3b92fa8c5731",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+    const webhookUrl =
+      process.env.N8N_WEBHOOK_URL ||
+      "https://hthegrumpy.app.n8n.cloud/webhook/312e7413-819d-4352-80a4-3b92fa8c5731";
+
+    const n8nRes = await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+
+    const text = await n8nRes.text();
+
+    // 在 Cloudflare / localhost 都會印在 server log
+    console.log("[/api/contact] n8n status:", n8nRes.status);
+    console.log("[/api/contact] n8n response:", text);
+
+    if (!n8nRes.ok) {
+      return NextResponse.json(
+        {
+          success: false,
+          from: "n8n",
+          status: n8nRes.status,
+          error: text || "n8n error",
         },
-        body: JSON.stringify(data),
-      }
-    );
-
-    // 3. 如果 n8n 回的不是 2xx，當成錯誤處理
-    if (!res.ok) {
-      console.error("n8n webhook error:", res.status, await res.text());
-      return new Response(
-        JSON.stringify({ ok: false, status: res.status }),
         { status: 500 }
       );
     }
 
-    // 4. 一切順利就回成功
-    return new Response(JSON.stringify({ ok: true }), {
-      status: 200,
-      headers: {
-        "Content-Type": "application/json",
+    return NextResponse.json({ success: true }, { status: 200 });
+  } catch (err: any) {
+    console.error("[/api/contact] error:", err);
+    return NextResponse.json(
+      {
+        success: false,
+        from: "api",
+        error: err?.message || "Server error",
       },
-    });
-  } catch (err) {
-    console.error("contact api error:", err);
-    return new Response(
-      JSON.stringify({ ok: false, status: 500 }),
       { status: 500 }
     );
   }
 }
+
