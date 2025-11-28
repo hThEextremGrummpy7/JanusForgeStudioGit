@@ -209,7 +209,7 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-[rgba(255,255,255,0.1)] text-xs text-[#b0b0b0] font-mono text-center">
-            © 2024 | JANUS FORGE STUDIO
+            © 2025 | JANUS FORGE STUDIO
           </div>
         </div>
       </footer>

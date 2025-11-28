@@ -40,8 +40,7 @@ export default function Home() {
                 <span className="text-white">STUDIO</span>
               </h1>
               <p className="text-lg hero-subtitle leading-relaxed max-w-xl font-light" style={{ marginTop: '20px', marginBottom: '20px' }}>
-                Dark cold black and white aesthetic. 
-                Minimalist design with precise typography.
+                AI - Vision - Innovation - Forge the Future. Shape the Impossible !
               </p>
             </div>
           </div>
