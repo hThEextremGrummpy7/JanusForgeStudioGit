@@ -115,10 +115,10 @@ export default function Home() {
               }}
             >
               <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-[#e8eef5] transition-colors" style={{ marginBottom: 'calc(0.5rem + 2px)' }}>
-                我們的承諾
+                鍛造你的AI工作室
               </h3>
               <p className="text-sm text-[#e0e0e0] leading-relaxed mb-4 group-hover:text-[#d0d8e0] transition-colors">
-                我們承諾提供最高品質的服務與解決方案。透過持續創新、專業技術與誠信合作，我們致力於超越客戶期望，建立長期且互信的夥伴關係，共同創造卓越價值與成功。
+                打造 AI 小型工作室，就是把創意、效率與科技濃縮在一個靈活的空間裡。透過輕量 GPU 工作站、雲端 AI 工具與自動化流程，你能在有限預算下打造極具戰力的內容產製中心。影像生成、行銷素材、數據整理、腳本撰寫都能以幾倍速度完成，讓單人或小團隊擁有媲美大型公司的創作能量。這樣的 AI Studio 是 快速和即時調整、少量成本以達到高度輸出。每一分投入，都能轉換成可見的產能與更具想像力的作品，為現代創作者最強的基地。
               </p>
             </div>
           </div>
@@ -224,11 +224,43 @@ export default function Home() {
       {/* Contact Form Section */}
       <ContactForm />
 
+      {/* Our Commitment Section - Full Width */}
+      <section className="w-full pt-12 pb-12 relative overflow-hidden" style={{
+        paddingTop: 'calc(3rem + 3px)',
+        paddingBottom: 'calc(3rem + 3px)',
+        background: '#000000'
+      }}>
+        <div className="container mx-auto relative z-10" style={{
+          paddingLeft: '3rem',
+          paddingRight: '3rem'
+        }}>
+          <div 
+            className="rounded-3xl" 
+            style={{
+              padding: '3rem',
+              background: 'linear-gradient(135deg, rgba(220, 220, 230, 0.15) 0%, rgba(200, 200, 210, 0.1) 50%, rgba(180, 180, 190, 0.15) 100%)',
+              border: '1px solid rgba(220, 220, 230, 0.3)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)'
+            }}
+          >
+            <div style={{ marginBottom: '4rem' }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">我們的承諾</h2>
+              <div className="h-px w-24 bg-gradient-to-r from-white to-transparent mb-8"></div>
+            </div>
+            <p className="text-base md:text-lg text-[#e0e0e0] leading-relaxed max-w-4xl">
+              我們承諾提供最高品質的服務與解決方案。透過持續創新、專業技術與誠信合作，我們致力於超越客戶期望，建立長期且互信的夥伴關係，共同創造卓越價值與成功。
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Footer - Dark Cold Black & White */}
-      <footer className="py-12 border-t border-[rgba(255,255,255,0.1)]">
-        <div className="container mx-auto px-6 md:px-8">
+      <footer className="py-10 border-t border-[rgba(255,255,255,0.1)]">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div className="flex gap-6 text-sm text-[#b0b0b0]" style={{ marginTop: '15px', marginBottom: '15px' }}>
+            <div className="flex gap-6 text-sm text-[#b0b0b0]" style={{ marginTop: '10px', marginBottom: '10px' }}>
               <a href="#contact" className="hover:text-white transition-all">聯絡我們</a>
               <a href="#" className="hover:text-white transition-all">LinkedIn</a>
               <a href="#" className="hover:text-white transition-all">Twitter</a>
