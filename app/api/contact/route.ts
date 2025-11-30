@@ -1,52 +1,42 @@
 // app/api/contact/route.ts
-import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  
-  console.log("ENV:", process.env.N8N_WEBHOOK_URL);
-
   try {
-    const body = await req.json();
+    // 1. 拿前端傳來的表單資料
+    const data = await req.json();
 
-    const webhookUrl =
-      process.env.N8N_WEBHOOK_URL ||
-      "https://hthegrumpy.app.n8n.cloud/webhook/312e7413-819d-4352-80a4-3b92fa8c5731";
-
-    const n8nRes = await fetch(webhookUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    });
-
-    const text = await n8nRes.text();
-
-    // 在 Cloudflare / localhost 都會印在 server log
-    console.log("[/api/contact] n8n status:", n8nRes.status);
-    console.log("[/api/contact] n8n response:", text);
-
-    if (!n8nRes.ok) {
-      return NextResponse.json(
-        {
-          success: false,
-          from: "n8n",
-          status: n8nRes.status,
-          error: text || "n8n error",
+    // 2. 轉送到 n8n webhook
+    const n8nResponse = await fetch(
+      "https://hthegrumpy.app.n8n.cloud/webhook/312e7413-819d-4352-80a4-3b92fa8c5731", // 你的 n8n webhook URL
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        { status: 500 }
+        body: JSON.stringify(data),
+      }
+    );
+
+    if (!n8nResponse.ok) {
+      const text = await n8nResponse.text();
+      console.error("n8n error:", n8nResponse.status, text);
+
+      return new Response(
+        JSON.stringify({ ok: false, error: "n8n request failed" }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
       );
     }
 
-    return NextResponse.json({ success: true }, { status: 200 });
-  } catch (err: any) {
-    console.error("[/api/contact] error:", err);
-    return NextResponse.json(
-      {
-        success: false,
-        from: "api",
-        error: err?.message || "Server error",
-      },
-      { status: 500 }
+    // 3. 成功就回前端一個 ok
+    return new Response(JSON.stringify({ ok: true }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (err) {
+    console.error("API /api/contact error:", err);
+    return new Response(
+      JSON.stringify({ ok: false, error: "server error" }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
 }
-
